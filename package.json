@@ -1,5 +1,5 @@
 {
-  "name": "hello-react-front-end",
+  "name": "hello-react-client",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,9 +11,11 @@
     "lint:js": "eslint \"**/*.{js,jsx}\""
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
     "@vitejs/plugin-react": "^4.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^8.1.2",
     "react-router-dom": "^6.15.0",
     "vite": "^4.4.5"
   },
