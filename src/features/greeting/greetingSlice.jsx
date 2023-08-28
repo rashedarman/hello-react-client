@@ -4,7 +4,7 @@ export const getGreeting = createAsyncThunk(
   'greeting/getGreeting',
   async () => {
     const greeting = await fetch('http://127.0.0.1:3000/api/greetings');
-    return await greeting.json();
+    return greeting.json();
   },
 );
 
@@ -16,9 +16,10 @@ export const greetingSlice = createSlice({
   name: 'greeting',
   initialState,
   extraReducers: (builder) => {
-    builder.addCase(getGreeting.fulfilled, (state, action) => {
-      state.greeting = action.payload;
-    });
+    builder.addCase(getGreeting.fulfilled, (state, action) => ({
+      ...state,
+      greeting: action.payload,
+    }));
   },
 });
 
